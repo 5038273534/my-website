@@ -7,15 +7,16 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ### Local Development
 
-```
+```bash
 $ npm start
+$ yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Build
 
-```
+```bash
 $ npm build
 ```
 
@@ -36,3 +37,5 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+如果您正在使用GitHub页面进行托管，则此命令是构建网站并推送到“gh pages”分支的便捷方法。
