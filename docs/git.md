@@ -34,6 +34,7 @@ git clone <远程仓库地址>
 ```bash
 git branch <分支名>  //创建分支
 git branch -M <分支名> // 修改当前分支名
+git branch -a //查询本地+远程分支列表
 ```
 
 ### 暂存区

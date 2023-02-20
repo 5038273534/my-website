@@ -43,3 +43,7 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
 如果您正在使用GitHub页面进行托管，则此命令是构建网站并推送到“gh pages”分支的便捷方法。
+
+
+项目目录介绍：
+1. 配置文件：docusaurus.config.js
