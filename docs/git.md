@@ -51,6 +51,13 @@ git tag <标签名>
 git status
 ```
 
+### 提交本地仓库
+```bash
+git commit -m "提交备注"
+git commit -a -m "提交备注"  // 添加到暂存区并且提交到本地库 只能是所有的修改的文件，新文件不能
+```
+
+
 ### 查询版本记录
 ```bash
 git log
