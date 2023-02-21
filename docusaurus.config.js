@@ -73,7 +73,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'markdown',
+            docId: 'demo',
             position: 'left',
             label: '笔记',
           },

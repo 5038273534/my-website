@@ -76,3 +76,7 @@ git remote -v //查询关联列表
 ```bash
 git push -u origin <分支名>  //推送到远程
 ```
+### 拉取远程代码到本地仓库
+```bash
+git pull origin <分支名>  //拉取代码
+```

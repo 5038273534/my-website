@@ -15,5 +15,6 @@ sidebar_position: 3
 
 ###### 快捷键
 
-打开Markdown预览 ：ctrl+K+v
+打开Markdown预览 ：`ctrl`+`K`+`v`
+`ctrl`+`p`
 
