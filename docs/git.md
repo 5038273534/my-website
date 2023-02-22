@@ -75,7 +75,16 @@ git remote -v //查询关联列表
 ### 推送到远程仓库
 ```bash
 git push -u origin <分支名>  //推送到远程
+git push origin <分支名> -f // 强制推送到远程仓库 （慎重）
 ```
+遇到的问题：
+
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
 ### 拉取远程代码到本地仓库
 ```bash
 git pull origin <分支名>  //拉取代码

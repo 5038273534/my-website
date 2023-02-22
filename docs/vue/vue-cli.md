@@ -23,6 +23,11 @@ vue create vue-project
 
 // 启动项目
 npm run serve
+
+// 项目要用到的依赖
+cnpm install --save less less-loader@5
+cnpm install --save vue-router
+
 ```
 
 
