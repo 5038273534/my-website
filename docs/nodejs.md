@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 
 ### 下载
-<https://nodejs.org/zh-cn/>
+<https://nodejs.org/zh-cn>
 
 
 ### 常用命令
@@ -23,7 +23,11 @@ npm install -g yarn
 yarn -v
 1.22.19
 
-// 安装淘宝镜像，参考网址：https://www.oschina.net/p/cnpm?hmsr=aladdin1e1
+// 安装淘宝镜像，参考网址：
+- https://npmmirror.com
+- https://www.oschina.net/p/cnpm?hmsr=aladdin1e1
+
+// 安装cnpm
 npm install cnpm -g --registry=https://registry.npm.taobao.org
 npm WARN deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
 

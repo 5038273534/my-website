@@ -3,7 +3,8 @@ sidebar_position: 3
 ---
 
 前提：
-1. 安装nodejs 参照[]
+1. 安装nodejs：<https://nodejs.org/zh-cn>,学习nodejs`/docs/nodejs`
+2. vue-cli官网：https://cli.vuejs.org/zh/guide
 
 
 ### 常用命令
@@ -18,7 +19,7 @@ npm update -g @vue/cli / npm i -g @vue/cli
 vue --version / vue -V
 @vue/cli 5.0.8
 
-// 创建项目
+// 脚手架创建项目
 vue create vue-project
 
 // 启动项目
@@ -33,6 +34,16 @@ cnpm install --save vue-router
 
 ### 项目目录说明
 ```
+node_modules  ->项目依赖包
+public
+src
+.gitignore
+babel.config.js
+jsconfig.json
+package-lock.json
+package.json
+README.md
+vue.config.js
 ```
 
 
@@ -44,6 +55,19 @@ cnpm install --save vue-router
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  如果自动打开出现0.0.0.0:8080解决方法：
+  vue.config.js文件里面添加：devServer
+  const { defineConfig } = require("@vue/cli-service");
+  module.exports = defineConfig({
+    transpileDependencies: true,
+    lintOnSave: false,
+    devServer: {
+      host: "localhost",
+      port: 8080,
+    },
+});
+
+
 ```
 2. 关闭eslint校验功能 (要是声明了变量没使用就会报错)。`vue.config.js`，增加 **lintOnSave: false**
 ```js
