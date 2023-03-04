@@ -73,7 +73,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'demo',
+            docId: 'gather',
             position: 'left',
             label: '笔记',
           },
