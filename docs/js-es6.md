@@ -2,6 +2,18 @@
 sidebar_position: 4
 ---
 
+###### 高频率使用
+
+
+```javascript
+JSON.stringify(obj)  // 对象转对象字符串
+JSON.parse('') // 对象字符串转对象
+
+
+```
+
+
+
 ```javascript
 let person ={
     name:'张三'
@@ -19,5 +31,8 @@ Object.defineProperty(person,'age',{
 })
 
 Object.keys(person) //返回对象key值列表数组
+
+
+
 
 ```
