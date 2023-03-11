@@ -29,6 +29,10 @@ npm run serve
 cnpm install --save less less-loader@5
 cnpm install --save vue-router
 
+
+// ui界面创建项目
+vue ui
+
 ```
 
 

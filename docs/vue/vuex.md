@@ -3,8 +3,8 @@ sidebar_position: 1
 ---
 
 ### 官方资料
-文档：<https://vuex.vuejs.org/zh/>
-视屏(英文)：<https://scrimba.com/learn/vuex>
+- 文档：<https://vuex.vuejs.org/zh/>
+- 视屏(英文)：<https://scrimba.com/learn/vuex>
 
 
 ### 学习文档
@@ -13,19 +13,19 @@ sidebar_position: 1
 
 ### 学习记录
 - 最新版本是`Vuex@4.1.0`
-- vuex 解决组件之间的传值、数据共享，就是管理数据
-- vuex 工作流程图
+- 解决组件之间的传值、数据共享，就是管理数据，数据都是响应式的，能保持组件内容同步 
+- 工作流程图
 
 
 - vuex 使用  
-###### 1. 下载本地或直接CDN引用
+###### 1. 下载到本地或直接CDN引用
 
 ```javascript
 <script src="https://unpkg.com/vuex"></script>  // 指向最新版
 <script src="https://unpkg.com/vuex@2.0.0"></script> // 指定版本
 ```
 
-###### 2. NPM安装与引用 
+###### 2. npm/yarn安装 
 
 ```bash
 npm install vuex --save
@@ -35,7 +35,7 @@ yarn add vuex
 
 ###### 3. 使用
 
-1. 创建(简单版)，新建`store/index.js`文件
+1. (简单版)，新建`store/index.js`文件
   
 ```javascript
 import Vue from 'vue'
@@ -47,7 +47,7 @@ const store = new Vuex.Store({
     state: {
         count:0,
         user:{
-            name:"",
+            name:'',
             age:18
         }
     },
@@ -79,14 +79,13 @@ const store = new Vuex.Store({
 export default store;
 
 /*
-    state
-    getters
-    mutations 唯一可以修改state值的方法，是**同步**的 commit，可以追逐每次修改的数据
+    state 数据都是响应式的，
+    getters 类似计算属性，对state数据进行包装
+    mutations 可以修改state值的方法，是同步的 commit，可以追逐每次修改的数据
     actions 异步,也可以直接修改state的值，但是追踪不到数据的改变
 */
 
 // 注意：组件多数据多，这种方式会造成数据复杂，应该使用模块化，改进如下
-
 // user.js
 const user = {
     state:{},
@@ -116,7 +115,6 @@ export default {
         }
     }
 }
-
 
 // 在store/index.js 引入
 import Vue from 'vue'
@@ -152,7 +150,7 @@ app.$mount()
 3. 在组件中使用
    
 ```javascript
-import {mapState,mapMutations,mapActions} from 'vuex'
+import {mapState,mapMutations,mapActions,mapGetters} from 'vuex'
 
 computed：{
         
@@ -164,6 +162,7 @@ computed：{
         c:'count'
     }),
     ...mapState('product',['list'])
+    ...mapGetters([''])
 },
 methods:{
         ...mapMutations('product',['add']),
@@ -178,9 +177,6 @@ this.$store.getters.getCount  // 获取值
 this.$store.getters.getUser.name // 获取值
 this.$store.dispatch('updateCount'.3); // 改变值 dispatch 是请求actions 
 this.$store.commit('addAsyns')  // commit 是请求mutations的
-
-this.list
-this.addAsyns()
 
 ```
 
