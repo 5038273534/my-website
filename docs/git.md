@@ -8,6 +8,9 @@ GitHub:<https://github.com>
 GitLab:<https://about.gitlab.com>  
 Gitee:<https://gitee.com>
 
+### 客户端
+- TortoiseGit:<https://tortoisegit.org/download/>
+
 ### 查询版本
 ```bash
 git -v
@@ -88,4 +91,15 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ### 拉取远程代码到本地仓库
 ```bash
 git pull origin <分支名>  //拉取代码
+```
+
+
+### 生成密钥
+```bash
+gitee
+ssh-keygen -t ed25519 -C "xxxxx@xxxxx.com"  #回车三次
+
+公密钥
+~/.ssh/id_ed25519.pub
+
 ```

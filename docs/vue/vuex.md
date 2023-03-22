@@ -6,15 +6,13 @@ sidebar_position: 1
 - 文档：<https://vuex.vuejs.org/zh/>
 - 视屏(英文)：<https://scrimba.com/learn/vuex>
 
-
-### 学习文档
-
 ### 学习视屏
 
 ### 学习记录
 - 最新版本是`Vuex@4.1.0`
-- 解决组件之间的传值、数据共享，就是管理数据，数据都是响应式的，能保持组件内容同步 
-- 工作流程图
+- 解决组件之间的传值、数据共享，就是管理数据，数据都是响应式的，能保持组件内容同步
+- mutations中更改state的值 
+
 
 
 - vuex 使用  
@@ -88,7 +86,7 @@ export default store;
 // 注意：组件多数据多，这种方式会造成数据复杂，应该使用模块化，改进如下
 // user.js
 const user = {
-    state:{},
+    state: () => ({ ... }),
     getters:{},
     mutations:{},
     actions；{}
@@ -99,9 +97,10 @@ export default user
 export default {
     product:{  
         namespaced:true,
-        state:{
+        state: () => ({
             list:['1','2']
-        },
+
+        }),
         getters:{},
         mutations:{
             add(state,value){
@@ -157,13 +156,14 @@ computed：{
     // 第一种
     // ...mapState(['count'])  
 
-    // 第二种，可以起个名字
+    // 第二种，可以起个名字  
     ...mapState({
         c:'count'
     }),
     ...mapState('product',['list'])
     ...mapGetters([''])
 },
+// 注意：同一个state 不能同时 mapSate getters
 methods:{
         ...mapMutations('product',['add']),
         ...mapActions('product',['addAsyns'])
