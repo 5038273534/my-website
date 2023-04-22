@@ -2,6 +2,21 @@
 sidebar_position: 4
 ---
 
+
+
+
+
+### es6 模块化
+```javascript
+默认暴露
+
+// 默认暴露可以是任何类型
+// 默认暴露在文件里只能一个
+export default {} 
+import module from ''
+
+```
+
 ### document
 ```javascript
 document.querySelector()

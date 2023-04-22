@@ -14,7 +14,26 @@
 16:15:01.287 [微信小程序开发者工具] - initialize
 
 ### 遇到的问题
-- tabBar 使用iconfont  不起作用
+```css
+@import './index.scss'; // 正确引入
+@import url('./index.scss'); // 错误引入会报错
 
-医院-中心：0731-28561122
-银行-平安客服热线：95511
+```
+
+
+
+
+onInit使用注意
+
+仅百度小程序基础库 3.260 以上支持 onInit 生命周期
+其他版本或平台可以同时使用 onLoad 生命周期进行兼容，注意避免重复执行相同逻辑
+不依赖页面传参的逻辑可以直接使用 created 生命周期替代
+
+
+生命周期执行顺序
+		
+vue 生命周期 	created >  mounted
+
+page 生命周期  onLoad > onReady 
+	
+created > onLoad >  mounted > onReady
