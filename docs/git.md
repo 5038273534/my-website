@@ -35,27 +35,38 @@ git clone <远程仓库地址>
 
 ### 分支
 ```bash
-#查询（本地+远程）
-git branch -a 
+# 查询
+git branch # 本地所有分支
+git branch -r # 远程所有分支
+git branch -a #（本地+远程）所有分支
 
-# 添加
-git branch <分支名>  #创建本地分支
+# 创建
+git branch <分支名> # 本地分支
 
 # 修改
 git branch -M <分支名> 
 
-# 切换
-git checkout -b <分支名> //创建并且切换分支
-git checkout <commitID|fd9269a>  //切换到指定版本
-
 # 删除
-git branch -d <分支名>  # 删除本地分支
-git push origin -d <分支名> # 删除远程分支
+git branch -d <分支名>  # 本地分支
+git branch -D  <分支名> # 本地分支（有修改未提交）强制删除
+git push <远程分支名|origin> -d <本地分支名> # 远程分支
+
+# 切换
+git checkout -b <分支名> # 创建并且切换分支
+git checkout <commitID>  # 切换到指定版本
+
+# 不常用
+git branch -v 
+git branch -f < 分支名> # 覆盖同名分支
+git branch -D/-d <分支名|master> <分支名|develop> # 删除本地库master develop
+git branch --merged # 已经合并的分支列表
+
 ```
 
-### 取消修改内容
+### 取消修改内容（没有add的状态）
 ```bash
 git restore <文件名> # 取消指定文件
+git restore .  # 取消所有文件
 ```
 
 ### 查询修改的文件
@@ -68,16 +79,21 @@ git status
 git add . # 添加所有文件
 ```
 
-
-
-
 ### 标签
 ```bash
+# 查看所有标签
+git tag
+
+# 打标签
 git tag <标签名>
+git tag -a <标签名> -m "标签注释"
+
+# 删除
+git tag -d <标签名>
+
+# 提交所有tag到远程
+git push origin --tags
 ```
-
-
-
 ###
 ```bash
 git rm -r --cached <文件|目录>
@@ -90,6 +106,13 @@ git rm --cached <文件|目录> //删除暂存区中文件
 ```bash
 git commit -m "提交备注"
 git commit -a -m "提交备注"  // 添加到暂存区并且提交到本地库 只能是所有的修改的文件，新文件不能
+```
+
+
+### 合并分支
+```bash
+git merge <分支名>
+
 ```
 
 
@@ -116,6 +139,7 @@ git push origin <分支名> -f // 强制推送到远程仓库 （慎重）
 ### 拉取远程代码到本地仓库
 ```bash
 git pull origin <分支名>  //拉取代码
+git pull --rebase origin master
 ```
 
 
@@ -134,7 +158,7 @@ git rm -r --cached unpackage
 
 ```
 
-
+```
 遇到的问题：
 
 产生：
@@ -142,3 +166,5 @@ git rm -r --cached unpackage
 提交失败
 
 git push master HEAD:<name-of-remote-branch>
+
+```
